@@ -8,4 +8,3 @@ helmCharts:
     version: 48.3.1
     namespace: monitoring
     includeCRDs: true
-    valuesFile: values.yaml
