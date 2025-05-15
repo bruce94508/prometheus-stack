@@ -1,18 +1,7 @@
 kubeStateMetrics:
   enabled: true
-
-kube-state-metrics:
-  fullnameOverride: "kube-state-metrics"
-  rbac:
-    create: true
-  releaseLabel: true
-  prometheus:
-    monitor:
-      enabled: true
-      interval: "60s"
-      honorLabels: true
-      relabelings:
-        - sourceLabels: [__address__]
-          regex: "(.*)"
-          targetLabel: cluster
-          replacement: "CHANGEME"
+  serviceMonitor:
+    relabelings:
+      - action: replace
+        replacement: "minikube"
+        targetLabel: cluster
