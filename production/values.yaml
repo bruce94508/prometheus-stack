@@ -1,7 +1,10 @@
-kubeStateMetrics:
-  enabled: true
-  serviceMonitor:
-    relabelings:
-      - action: replace
-        replacement: "minikube"
-        targetLabel: cluster
+prometheusSpec:
+  scrapeClasses:
+    - default: true
+      name: cluster-relabeling
+      relabelings:
+        - sourceLabels: [__name__]
+          regex: (.*)
+          targetLabel: cluster
+          replacement: my-cluster
+          action: replace
