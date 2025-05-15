@@ -1,0 +1,11 @@
+prometheus:
+  prometheusSpec:
+    additionalScrapeConfigs:
+      - job_name: "kubelet"
+        kubernetes_sd_configs:
+          - role: node
+        relabel_configs:
+          - source_labels: [__address__]
+            target_label: __address__
+          - replacement: "minikube"
+            target_label: cluster
