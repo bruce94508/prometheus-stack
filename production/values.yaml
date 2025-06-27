@@ -5,3 +5,9 @@ kubeStateMetrics:
       - action: replace
         replacement: "minikube"
         targetLabel: cluster
+
+prometheus:
+  prometheusSpec:
+    additionalScrapeConfigsSecret:
+      enabled: true
+      name: prometheus-scrape-configs
