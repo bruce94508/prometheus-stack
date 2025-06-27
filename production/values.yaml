@@ -11,3 +11,4 @@ prometheus:
     additionalScrapeConfigsSecret:
       enabled: true
       name: prometheus-scrape-configs
+      key: prometheus-scrape-configs.yaml
