@@ -16,7 +16,7 @@ grafana:
   enabled: true
   grafana.ini:
     server:
-      root_url: http://10.40.1.105:8082
+      root_url: http://localhost:8082
     auth.generic_oauth:
       enabled: true
       name: RACEV-OIDC
@@ -38,4 +38,4 @@ grafana:
       # disable_login_form: true
       # enable_login_token: true
       # oauth_auto_login: true
-      signout_redirect_url: https://adas.maxwin.com.tw/apis/keycloak/realms/demo/protocol/openid-connect/logout?client_id=grafana-oauth&post_logout_redirect_uri=http%3A%2F%2F10.40.1.105%3A8082
+      signout_redirect_url: https://adas.maxwin.com.tw/apis/keycloak/realms/demo/protocol/openid-connect/logout?client_id=grafana-oauth&post_logout_redirect_uri=http%3A%2F%2Flocalhost%3A8082
