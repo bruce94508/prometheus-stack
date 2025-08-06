@@ -12,30 +12,28 @@ prometheus:
       enabled: true
       name: prometheus-scrape-configs
       key: prometheus-scrape-configs.yaml
-# grafana:
-#   enabled: true
-#   grafana.ini:
-#     server:
-#       root_url: http://localhost:8082
-#     auth.generic_oauth:
-#       enabled: true
-#       name: RACEV-OIDC
-#       allow_sign_up: true
-#       client_id: grafana-oauth
-#       client_secret: DEFxRSWmtcn5OFKGBs2JpxRXQYKxuMXc
-#       scopes: openid email profile offline_access roles
-#       email_attribute_path: email
-#       login_attribute_path: username
-#       name_attribute_path: full_name
-#       tls_skip_verify_insecure: true
-#       auth_url: https://adas.maxwin.com.tw/apis/keycloak/realms/demo/protocol/openid-connect/auth
-#       token_url: https://adas.maxwin.com.tw/apis/keycloak/realms/demo/protocol/openid-connect/token
-#       api_url: https://adas.maxwin.com.tw/apis/keycloak/realms/demo/protocol/openid-connect/userinfo
-#       role_attribute_path: contains(resource_access."grafana-oauth".roles[*], 'admin') && 'Admin' || contains(resource_access."grafana-oauth".roles[*], 'editor') && 'Editor' || 'Viewer'
-#       role_attribute_strict: false
-#     auth:
-#       ## force use keycloak login page for grafana
-#       # disable_login_form: true
-#       # enable_login_token: true
-#       # oauth_auto_login: true
-#       signout_redirect_url: https://adas.maxwin.com.tw/apis/keycloak/realms/demo/protocol/openid-connect/logout?client_id=grafana-oauth&post_logout_redirect_uri=http%3A%2F%2Flocalhost%3A8082
+grafana:
+  enabled: true
+  grafana.ini:
+    auth.generic_oauth:
+      enabled: true
+      name: RACEV-OIDC
+      allow_sign_up: true
+      client_id: grafana-oauth
+      client_secret: DEFxRSWmtcn5OFKGBs2JpxRXQYKxuMXc
+      scopes: openid email profile offline_access roles
+      email_attribute_path: email
+      login_attribute_path: username
+      name_attribute_path: full_name
+      tls_skip_verify_insecure: true
+      auth_url: https://adas.maxwin.com.tw/apis/keycloak/realms/demo/protocol/openid-connect/auth
+      token_url: https://adas.maxwin.com.tw/apis/keycloak/realms/demo/protocol/openid-connect/token
+      api_url: https://adas.maxwin.com.tw/apis/keycloak/realms/demo/protocol/openid-connect/userinfo
+      role_attribute_path: contains(resource_access."grafana-oauth".roles[*], 'admin') && 'Admin' || contains(resource_access."grafana-oauth".roles[*], 'editor') && 'Editor' || 'Viewer'
+      role_attribute_strict: false
+    auth:
+      ## force use keycloak login page for grafana
+      # disable_login_form: true
+      # enable_login_token: true
+      # oauth_auto_login: true
+      signout_redirect_url: https://adas.maxwin.com.tw/apis/keycloak/realms/demo/protocol/openid-connect/logout?client_id=grafana-oauth&post_logout_redirect_uri=http%3A%2F%2Flocalhost%3A8082
