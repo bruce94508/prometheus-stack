@@ -24,8 +24,6 @@ grafana:
     finalizers:
       - kubernetes.io/pvc-protection
   grafana.ini:
-    server:
-      root_url: http://localhost:8082/grafana
     auth.generic_oauth:
       enabled: true
       name: RACEV-OIDC
