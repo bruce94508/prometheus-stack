@@ -56,4 +56,4 @@ grafana:
       # disable_login_form: true
       # enable_login_token: true
       # oauth_auto_login: true
-      signout_redirect_url: https://localhost:8083/realms/demo/protocol/openid-connect/logout?client_id=grafana-oauth&post_logout_redirect_uri=http%3A%2F%2Flocalhost%3A8082
+      signout_redirect_url: http://localhost:8083/realms/demo/protocol/openid-connect/logout?client_id=grafana-oauth&post_logout_redirect_uri=http%3A%2F%2Flocalhost%3A8082
