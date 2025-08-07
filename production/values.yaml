@@ -42,9 +42,9 @@ grafana:
       login_attribute_path: username
       name_attribute_path: full_name
       tls_skip_verify_insecure: true
-      auth_url: https://keycloak-http.keycloak.svc.cluster.local/realms/demo/protocol/openid-connect/auth
-      token_url: https://keycloak-http.keycloak.svc.cluster.local/realms/demo/protocol/openid-connect/token
-      api_url: https://keycloak-http.keycloak.svc.cluster.local/realms/demo/protocol/openid-connect/userinfo
+      auth_url: https://localhost:8083/realms/demo/protocol/openid-connect/auth
+      token_url: https://keycloak.keycloak.svc.cluster.local/realms/demo/protocol/openid-connect/token
+      api_url: https://keycloak.keycloak.svc.cluster.local/realms/demo/protocol/openid-connect/userinfo
       # auth_url: https://adas.maxwin.com.tw/apis/keycloak/realms/demo/protocol/openid-connect/auth
       # token_url: https://adas.maxwin.com.tw/apis/keycloak/realms/demo/protocol/openid-connect/token
       # api_url: https://adas.maxwin.com.tw/apis/keycloak/realms/demo/protocol/openid-connect/userinfo
