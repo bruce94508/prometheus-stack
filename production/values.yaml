@@ -25,7 +25,6 @@ grafana:
       - kubernetes.io/pvc-protection
   grafana.ini:
     server:
-      domain: localhost:8082
       root_url: http://localhost:8082/grafana
     auth.generic_oauth:
       enabled: true
