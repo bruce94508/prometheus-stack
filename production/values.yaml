@@ -36,7 +36,8 @@ grafana:
       name: RACEV-OIDC
       allow_sign_up: true
       client_id: grafana-oauth
-      client_secret: DEFxRSWmtcn5OFKGBs2JpxRXQYKxuMXc
+      client_secret: XJ5lXEBqbFNlTflgWYFwqGpjky5UbGM1
+      # client_secret: DEFxRSWmtcn5OFKGBs2JpxRXQYKxuMXc
       scopes: openid email profile offline_access roles
       email_attribute_path: email
       login_attribute_path: username
