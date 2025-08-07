@@ -15,7 +15,7 @@ prometheus:
 grafana:
   enabled: true
   persistence:
-    enabled: true
+    enabled: false
     type: pvc
     storageClassName: grafana-sc
     accessModes:
