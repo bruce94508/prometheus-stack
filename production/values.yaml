@@ -42,9 +42,12 @@ grafana:
       login_attribute_path: username
       name_attribute_path: full_name
       tls_skip_verify_insecure: true
-      auth_url: https://adas.maxwin.com.tw/apis/keycloak/realms/demo/protocol/openid-connect/auth
-      token_url: https://adas.maxwin.com.tw/apis/keycloak/realms/demo/protocol/openid-connect/token
-      api_url: https://adas.maxwin.com.tw/apis/keycloak/realms/demo/protocol/openid-connect/userinfo
+      auth_url: https://keycloak-http.keycloak.svc.cluster.local/realms/demo/protocol/openid-connect/auth
+      token_url: https://keycloak-http.keycloak.svc.cluster.local/realms/demo/protocol/openid-connect/token
+      api_url: https://keycloak-http.keycloak.svc.cluster.local/realms/demo/protocol/openid-connect/userinfo
+      # auth_url: https://adas.maxwin.com.tw/apis/keycloak/realms/demo/protocol/openid-connect/auth
+      # token_url: https://adas.maxwin.com.tw/apis/keycloak/realms/demo/protocol/openid-connect/token
+      # api_url: https://adas.maxwin.com.tw/apis/keycloak/realms/demo/protocol/openid-connect/userinfo
       role_attribute_path: contains(resource_access."grafana-oauth".roles[*], 'admin') && 'Admin' || contains(resource_access."grafana-oauth".roles[*], 'editor') && 'Editor' || 'Viewer'
       role_attribute_strict: false
     auth:
@@ -52,4 +55,4 @@ grafana:
       # disable_login_form: true
       # enable_login_token: true
       # oauth_auto_login: true
-      signout_redirect_url: https://adas.maxwin.com.tw/apis/keycloak/realms/demo/protocol/openid-connect/logout?client_id=grafana-oauth&post_logout_redirect_uri=http%3A%2F%2Flocalhost%3A8082
+      signout_redirect_url: https://keycloak-http.keycloak.svc.cluster.local/realms/demo/protocol/openid-connect/logout?client_id=grafana-oauth&post_logout_redirect_uri=http%3A%2F%2Flocalhost%3A8082
