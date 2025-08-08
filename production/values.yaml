@@ -49,7 +49,7 @@ grafana:
       # auth_url: https://adas.maxwin.com.tw/apis/keycloak/realms/demo/protocol/openid-connect/auth
       # token_url: https://adas.maxwin.com.tw/apis/keycloak/realms/demo/protocol/openid-connect/token
       # api_url: https://adas.maxwin.com.tw/apis/keycloak/realms/demo/protocol/openid-connect/userinfo
-      role_attribute_path: contains(resource_access.grafana-oauth.roles, 'admin') && 'Admin' || contains(resource_access.grafana-oauth.roles, 'editor') && 'Editor' || 'Viewer'
+      role_attribute_path: contains(resource_access."grafana-oauth".roles[*], 'admin') && 'Admin' || contains(resource_access."grafana-oauth".roles[*], 'editor') && 'Editor' || 'Viewer'
       role_attribute_strict: false
     auth:
       ## force use keycloak login page for grafana
