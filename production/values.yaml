@@ -61,3 +61,6 @@ grafana:
       signout_redirect_url: http://localhost:8083/realms/demo/protocol/openid-connect/logout?client_id=grafana-oauth&post_logout_redirect_uri=http%3A%2F%2Flocalhost%3A8082
 
   assertNoLeakedSecrets: false
+
+  initChownData:
+    enabled: false
