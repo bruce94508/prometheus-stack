@@ -19,11 +19,11 @@ grafana:
       - ip: "adas.maxwin.com.tw"
         hostnames:
           - "adas.maxwin.com.tw"
-  additionalDataSources:
-    - name: Loki
-      type: loki
-      url: http://my-loki:3100
-      access: proxy
+  # additionalDataSources:
+  #   - name: Loki
+  #     type: loki
+  #     url: http://my-loki:3100
+  #     access: proxy
   persistence:
     enabled: true
     type: pvc
