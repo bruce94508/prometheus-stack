@@ -1,6 +1,30 @@
+# Loki 最小必要配置
+deploymentMode: SingleBinary
+
+singleBinary:
+  replicas: 1
+  persistence:
+    enabled: true
+    size: 10Gi
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 200m
+      memory: 256Mi
+
 loki:
-  enabled: true
-  schemaConfig:
+  auth_enabled: false
+  storage_config:
+    boltdb_shipper:
+      active_index_directory: /loki/boltdb-shipper-active
+      cache_location: /loki/boltdb-shipper-cache
+      shared_store: filesystem
+    filesystem:
+      directory: /loki/chunks
+  
+  schema_config:
     configs:
       - from: 2025-08-21
         store: boltdb-shipper
@@ -9,7 +33,12 @@ loki:
         index:
           prefix: index_
           period: 24h
-  tableManager:
-    retentionDeletesEnabled: true
-    retentionPeriod: 168h
 
+  limits_config:
+    retention_period: 168h  # 7天
+
+gateway:
+  enabled: false
+
+test:
+  enabled: false
