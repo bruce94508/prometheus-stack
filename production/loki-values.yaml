@@ -1,5 +1,5 @@
 loki:
-  auth_enabled: false
+  auth_enabled: false # 關掉 multi-tenant
   commonConfig:
     replication_factor: 1
   schemaConfig:
