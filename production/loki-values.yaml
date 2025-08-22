@@ -1,44 +1,54 @@
-# # Loki 最小必要配置
-# deploymentMode: SingleBinary
+loki:
+  commonConfig:
+    replication_factor: 1
+  schemaConfig:
+    configs:
+      - from: "2025-08-22"
+        store: tsdb
+        object_store: s3
+        schema: v13
+        index:
+          prefix: loki_index_
+          period: 24h
+  pattern_ingester:
+      enabled: true
+  limits_config:
+    allow_structured_metadata: true
+    volume_enabled: true
+  ruler:
+    enable_api: true
 
-# singleBinary:
-#   replicas: 1
-#   persistence:
-#     enabled: true
-#     size: 10Gi
-#   resources:
-#     requests:
-#       cpu: 100m
-#       memory: 128Mi
-#     limits:
-#       cpu: 200m
-#       memory: 256Mi
+minio:
+  enabled: true
+      
+deploymentMode: SingleBinary
 
-# loki:
-#   auth_enabled: false
-#   storage_config:
-#     boltdb_shipper:
-#       active_index_directory: /loki/boltdb-shipper-active
-#       cache_location: /loki/boltdb-shipper-cache
-#       shared_store: filesystem
-#     filesystem:
-#       directory: /loki/chunks
-  
-#   schema_config:
-#     configs:
-#       - from: 2025-08-21
-#         store: boltdb-shipper
-#         object_store: filesystem
-#         schema: v11
-#         index:
-#           prefix: index_
-#           period: 24h
+singleBinary:
+  replicas: 1
 
-#   limits_config:
-#     retention_period: 168h  # 7天
+# Zero out replica counts of other deployment modes
+backend:
+  replicas: 0
+read:
+  replicas: 0
+write:
+  replicas: 0
 
-# gateway:
-#   enabled: false
-
-# test:
-#   enabled: false
+ingester:
+  replicas: 0
+querier:
+  replicas: 0
+queryFrontend:
+  replicas: 0
+queryScheduler:
+  replicas: 0
+distributor:
+  replicas: 0
+compactor:
+  replicas: 0
+indexGateway:
+  replicas: 0
+bloomCompactor:
+  replicas: 0
+bloomGateway:
+  replicas: 0
