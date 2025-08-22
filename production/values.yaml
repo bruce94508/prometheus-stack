@@ -19,11 +19,15 @@ grafana:
       - ip: "adas.maxwin.com.tw"
         hostnames:
           - "adas.maxwin.com.tw"
-  # additionalDataSources:
-  #   - name: Loki
-  #     type: loki
-  #     url: http://my-loki:3100
-  #     access: proxy
+  datasources:
+    datasources.yaml:
+      apiVersion: 1
+      datasources:
+        - name: Loki
+          type: loki
+          access: proxy
+          url: http://loki-stack:3100
+          isDefault: true
   persistence:
     enabled: true
     type: pvc
