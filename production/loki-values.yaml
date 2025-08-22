@@ -1,12 +1,4 @@
 loki:
-  memcached:
-    chunksCache:
-      resources:
-        requests:
-          memory: 2560Mi
-          cpu: 500m
-        limits:
-          memory: 5120Mi
   commonConfig:
     replication_factor: 1
   schemaConfig:
@@ -25,6 +17,9 @@ loki:
     volume_enabled: true
   ruler:
     enable_api: true
+
+chunksCache:
+  allocatedMemory: 1024
 
 minio:
   enabled: true
