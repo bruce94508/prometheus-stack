@@ -1,10 +1,12 @@
 loki:
-  chunksCache:
-    resources:
-      requests:
-        memory: 256Mi
-      limits:
-        memory: 512Mi
+  memcached:
+    chunksCache:
+      resources:
+        requests:
+          memory: 2560Mi
+          cpu: 500m
+        limits:
+          memory: 5120Mi
   commonConfig:
     replication_factor: 1
   schemaConfig:
