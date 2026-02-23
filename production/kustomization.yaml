@@ -19,10 +19,10 @@ helmCharts:
     includeCRDs: true
     valuesFile: values.yaml
 
-  - name: loki
-    releaseName: loki-stack
-    repo: https://grafana.github.io/helm-charts
-    version: 6.26.0
-    namespace: monitoring
-    includeCRDs: true
-    valuesFile: loki-values.yaml
+  # - name: loki
+  #   releaseName: loki-stack
+  #   repo: https://grafana.github.io/helm-charts
+  #   version: 6.26.0
+  #   namespace: monitoring
+  #   includeCRDs: true
+  #   valuesFile: loki-values.yaml
