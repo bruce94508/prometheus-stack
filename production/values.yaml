@@ -14,6 +14,8 @@ prometheus:
       key: prometheus-scrape-configs.yaml
 grafana:
   enabled: true
+  adminUser: "admin"
+  adminPassword: "admin"
   extraPodSpec:
     hostAliases:
       - ip: "adas.maxwin.com.tw"
