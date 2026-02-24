@@ -48,6 +48,8 @@ grafana:
       root_url: http://localhost:8082
     security:
       allow_embedding: true
+    auth.basic:
+      enabled: true
     auth.generic_oauth:
       enabled: true
       name: RACEV-OIDC
