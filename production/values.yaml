@@ -13,6 +13,8 @@ prometheus:
       name: prometheus-scrape-configs
       key: prometheus-scrape-configs.yaml
 grafana:
+  env:
+    GF_PLUGINS_PREINSTALL: "grafana-lokiexplore-app@1.0.37"
   enabled: true
   adminUser: "admin"
   adminPassword: "admin"
